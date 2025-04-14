@@ -10,11 +10,13 @@
   <body>
     <header>
       <nav>
-        <img
+        <a href="./index.html">
+          <img
           class="icon"
           src="./assets/img/logo.png"
           alt="hjemmeside logo fra fontawesome"
-        />
+          />
+        </a>
         <ul>
           <li>
             <a href="./recipes.html">Recipes</a>
@@ -29,27 +31,32 @@
     <h1>Recipes</h1>
     <aside class="filter-panel">
       <h2>Filter</h2>
-
       <div class="accordion">
         <button class="accordion-header">Meal type <span>+</span></button>
         <div class="accordion-content">
           <label><input type="checkbox" /> Breakfast</label><br />
           <label><input type="checkbox" /> Lunch</label><br />
-          <label><input type="checkbox" /> Dinner</label>
+          <label><input type="checkbox" /> Dinner</label><br>
+          <label><input type="checkbox" /> Snack/Apetizer</label><br>
+          <label><input type="checkbox" /> Homemade Ingredients</label><br>
+          <label><input type="checkbox" /> Dessert</label><br>
+          <label><input type="checkbox" /> Baked Goods</label><br>
+          <label><input type="checkbox" /> Main course</label><br>
         </div>
 
         <button class="accordion-header">Time to make <span>+</span></button>
         <div class="accordion-content">
-          <label><input type="checkbox" /> Under 30 mins</label><br />
-          <label><input type="checkbox" /> 30-60 mins</label><br />
-          <label><input type="checkbox" /> Over 1 hour</label>
+          <label><input type="checkbox" /> Short: 15 to 30 min</label><br />
+          <label><input type="checkbox" /> Medium: 30 to 60 min</label><br />
+          <label><input type="checkbox" /> Long: 60+ min</label>
         </div>
 
         <button class="accordion-header">Allergies <span>+</span></button>
         <div class="accordion-content">
-          <label><input type="checkbox" /> Nuts</label><br />
-          <label><input type="checkbox" /> Dairy</label><br />
-          <label><input type="checkbox" /> Gluten</label>
+          <label><input type="checkbox" /> Shellfish allergy</label><br />
+          <label><input type="checkbox" /> Lactose intolerance</label><br />
+          <label><input type="checkbox" /> Gluten free</label><br>
+          <label><input type="checkbox" /> Egg allergy</label>
         </div>
 
         <button class="accordion-header">
@@ -58,7 +65,8 @@
         <div class="accordion-content">
           <label><input type="checkbox" /> Vegan</label><br />
           <label><input type="checkbox" /> Vegetarian</label><br />
-          <label><input type="checkbox" /> Keto</label>
+          <label><input type="checkbox" /> Drinks</label><br>
+          <label><input type="checkbox" /> Pescater</label>
         </div>
 
         <button class="accordion-header">Difficulty <span>+</span></button>
