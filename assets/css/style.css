@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Solway:wght@300;400;500;700;800&display=swap');
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Solway", serif;
+}
+
+p, a{
+    font-family: "Fredoka", sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    background-color: #316531;
+    padding: 5rem;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFF0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.user-login {
+    display: flex;
+    align-items: center;
+    border: 1px solid #316531;
+    color: #316531;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: auto;
+    height: auto;
+}
+
+li{
+    list-style: none;
+    background-color: #316531;
+    padding: 1rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 25px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.hero{
+    width: 100%;
+}
+
+.recipeCollection{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;  
+}
+
+.recipeCollection img{
+    border: 5px solid #316531;
+    border-radius: 100%;
+    padding: 2rem;
+}
+
+#recipeh2{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#forsideCards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Card EASY*/
+article {
+    margin: 20px;
+}
+
+.card-easy {
+    border-radius: 8px; 
+    text-align: center; 
+    width: 300px;  
+}
+
+
+.card-easy img {
+    width: 100%; 
+    height: auto; 
+    margin: 0;
+}
+
+.card-easy p {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 2px solid #316531;
+    border-right: 2px solid #316531;
+    border-top: 2px solid #316531;
+    background-color: rgba(128, 190, 128, 0.2);
+    padding: 5px;
+    margin: 0;
+    width: 80px;
+}
+
+.imgAndText{
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    background-color: rgba(128, 190, 128, 0.2);
+}
+.card-easy h3 {
+    margin: 10px 0;
+    text-align: left;
+}
+
+/* Card MEDIUM*/
+
+.card-medium {
+    border-radius: 8px; 
+    text-align: center; 
+    width: 300px;  
+}
+
+
+.card-medium img {
+    width: 100%; 
+    height: auto; 
+    margin: 0;
+}
+
+.card-medium p {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 2px solid #BDA570;
+    border-right: 2px solid #BDA570;
+    border-top: 2px solid #BDA570;
+    background-color: #FCDB95;
+    padding: 5px;
+    margin: 0;
+    width: 80px;
+}
+
+.imgAndText{
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    background-color: rgba(128, 190, 128, 0.2);
+}
+.card-medium h3 {
+    margin: 10px 0;
+    text-align: left;
+}
+
+/* Card Hard*/
+.card-hard {
+    border-radius: 8px; 
+    text-align: center; 
+    width: 300px;  
+    margin: 0;
+}
+
+
+.card-hard img {
+    width: 100%; 
+    height: auto; 
+    margin: 0;
+}
+
+.card-hard p {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 2px solid #8D0909;
+    border-right: 2px solid #8D0909;
+    border-top: 2px solid #8D0909;
+    background-color: #FF8686;
+    padding: 5px;
+    margin: 0;
+    width: 80px;
+}
+
+.imgAndText{
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    background-color: rgba(128, 190, 128, 0.2);
+}
+.card-hard h3 {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.recipe-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem;
+  }
+  
+  .all-recipes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1200px;
+  }
+  
+  /*  */
+  /*  */
+  .filter-panel {
+    width: 200px;
+    background-color: #83BC7D;
+    padding: 1rem;
+    border-radius: 0 0 1rem 0;
+    font-family: sans-serif;
+  }
+  
+  .filter-panel h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .accordion-header {
+    background: none;
+    border: 1px solid #333;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  .accordion-header + .accordion-content {
+    display: none;
+    padding: 0.5rem;
+    background-color: #a3cf9b;
+    border: 1px solid #333;
+    border-top: none;
+  }
+  
+  .accordion-header.active + .accordion-content {
+    display: block;
+  }
+  

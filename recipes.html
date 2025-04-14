@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/java/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          class="icon"
+          src="./assets/img/logo.png"
+          alt="hjemmeside logo fra fontawesome"
+        />
+        <ul>
+          <li>
+            <a href="./recipes.html">Recipes</a>
+          </li>
+        </ul>
+        <div class="user-login">
+          <img class="user" src="./assets/img/usericon.png" alt="" />
+          <p>USER</p>
+        </div>
+      </nav>
+    </header>
+    <h1>Recipes</h1>
+    <aside class="filter-panel">
+      <h2>Filter</h2>
+
+      <div class="accordion">
+        <button class="accordion-header">Meal type <span>+</span></button>
+        <div class="accordion-content">
+          <label><input type="checkbox" /> Breakfast</label><br />
+          <label><input type="checkbox" /> Lunch</label><br />
+          <label><input type="checkbox" /> Dinner</label>
+        </div>
+
+        <button class="accordion-header">Time to make <span>+</span></button>
+        <div class="accordion-content">
+          <label><input type="checkbox" /> Under 30 mins</label><br />
+          <label><input type="checkbox" /> 30-60 mins</label><br />
+          <label><input type="checkbox" /> Over 1 hour</label>
+        </div>
+
+        <button class="accordion-header">Allergies <span>+</span></button>
+        <div class="accordion-content">
+          <label><input type="checkbox" /> Nuts</label><br />
+          <label><input type="checkbox" /> Dairy</label><br />
+          <label><input type="checkbox" /> Gluten</label>
+        </div>
+
+        <button class="accordion-header">
+          Dietary preferences <span>+</span>
+        </button>
+        <div class="accordion-content">
+          <label><input type="checkbox" /> Vegan</label><br />
+          <label><input type="checkbox" /> Vegetarian</label><br />
+          <label><input type="checkbox" /> Keto</label>
+        </div>
+
+        <button class="accordion-header">Difficulty <span>+</span></button>
+        <div class="accordion-content">
+          <label><input type="checkbox" /> Easy</label><br />
+          <label><input type="checkbox" /> Medium</label><br />
+          <label><input type="checkbox" /> Hard</label>
+        </div>
+      </div>
+    </aside>
+    <div class="recipe-wrapper">
+      <div class="all-recipes"></div>
+    </div>
+  </body>
+</html>
