@@ -253,4 +253,28 @@ article {
   .accordion-header.active + .accordion-content {
     display: block;
   }
-  
+  /* Samlings sider*/
+
+  .CollectionSite{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .CollectionSite img{
+    border: 5px solid #316531;
+        border-radius: 100%;
+        padding: 2rem;
+  }
+  #CollectionCardName{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+  }
+  #CollectionCardTekst {
+    width: 600px;
+  }
+
+  /*Breadcrumbs*/
+  .breadCrumbs{
+    list-style: none;
+  }
