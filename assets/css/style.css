@@ -275,6 +275,25 @@ article {
   }
 
   /*Breadcrumbs*/
-  .breadCrumbs{
+  .Breadcrumbs{
     list-style: none;
   }
+  .Breadcrumbs li a{
+    color: black;
+    font-family: "Fredoka", sans-serif;
+    padding: 5px;
+  }
+  .Breadcrumbs li{
+    display: inline;
+    font-size: 15px;
+  }
+/* Mellemrum mellem orderne*/
+.Breadcrumbs li + li:before{
+content: "/";
+padding: 15px;
+}
+/*Hover funktionen*/
+.Breadcrumbs li a:hover{
+    background-color: rgba(128, 190, 128, 0.2);
+    border-radius: 15px;
+}
