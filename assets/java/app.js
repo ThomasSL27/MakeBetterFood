@@ -62,7 +62,6 @@ document.querySelectorAll('.accordion-header').forEach(header => {
   });
   
 
-
 const domain = "https://api.finnw.dk/";
 const postsEndpoint = "wp-json/wp/v2/posts";
 const getRealImageUrls = "&acf_format=standard";
@@ -70,34 +69,24 @@ const authEndpoint = "wp-json/jwt-auth/v1/token";
 
 const resultEl = document.querySelector(".result");
 
+const desiredRecipeSlug = "sesame-noodles-with-chicken";
+
 init();
 
 async function init() {
     try {
         const token = await getToken();
-        const recipes = await getPublicRecipes(token);
-        renderRecipes(recipes);
-
-        // Lyt efter ændringer på radiobuttons
-        const radioButtons = document.querySelectorAll('.tilberedningstid');
-        radioButtons.forEach(button => {
-            button.addEventListener('change', async (event) => {
-                // henter den valgte værdi fra radioknap
-                const selectedValue = event.target.value;
-                // kalderefter getsPrivateRecipes som henter opskrifterne med selectedValue
-                const recipes = await getPublicRecipes(token, selectedValue);
-                // vises på siden
-                renderRecipes(recipes);
-            });
-        });
-
+        const recipe = await getRecipeBySlug(token, desiredRecipeSlug);
+        if (recipe) {
+            renderRecipes([recipe]);
+        } else {
+            resultEl.innerHTML = "Opskriften kunne ikke findes.";
+        }
     } catch (err) {
         console.log('err:', err);
         resultEl.innerHTML = "Der gik noget galt, fuck hvor nederen?!";
     }
 }
-
-
 
 async function getToken() {
     const userInfo = {
@@ -124,21 +113,16 @@ async function getToken() {
     }
 }
 
-async function getPublicRecipes(token, tilberedningstidId = "all") {
-    const filter = tilberedningstidId === "all" ? "" : `&
-    tilberedningstid=${tilberedningstidId}`;
+async function getRecipeBySlug(token, slug) {
     const options = {
         headers: {
             Authorization: "Bearer " + token
         }
     };
-
-    const res = await fetch(domain + postsEndpoint + "?status=publish" + filter + getRealImageUrls, options);
-    console.log('res:', res);
+    const res = await fetch(`${domain}${postsEndpoint}?slug=${slug}${getRealImageUrls}`, options);
     const recipes = await res.json();
-    return recipes;
+    return recipes.length > 0 ? recipes[0] : null;
 }
-
 
 function renderRecipes(data) {
     resultEl.innerHTML = "";
@@ -155,13 +139,13 @@ function renderRecipes(data) {
                     <h2>${recipe.title.rendered}</h2>
                     ${recipe.content.rendered}
                     <p><strong>Ingredienser:</strong> ${acf.ingredienser}</p>
-                    <p><strong>Fremgangsmåde:</strong> ${acf.fremgangsmaade}
+                    <p><strong>Fremgangsmåde:</strong> ${acf.fremgangsmaade}</p>
                     <p><strong>Varighed:</strong> ${acf.varighed_i_minutter}</p>
-                    <img src="${acf.opskrift_billede.url}"</img>
+                    <img src="${acf.opskrift_billede?.url}" alt="Opskrift billede" />
                 </article>
             `;
         });
     } else {
-        resultEl.innerHTML = "<p>Ingen opskrifter fundet for den valgte varighed.</p>";
+        resultEl.innerHTML = "<p>Ingen opskrift fundet.</p>";
     }
 }
