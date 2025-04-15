@@ -138,9 +138,9 @@ function renderRecipes(data) {
                 <article>
                     <h2>${recipe.title.rendered}</h2>
                     ${recipe.content.rendered}
-                    <p><strong>Ingredienser:</strong> ${acf.ingredienser}</p>
-                    <p><strong>Fremgangsmåde:</strong> ${acf.fremgangsmaade}</p>
-                    <p><strong>Varighed:</strong> ${acf.varighed_i_minutter}</p>
+                    <p><strong>Ingredienser:</strong><br> ${Object.values(acf.ingredienser).filter(val => val.trim() !== "").join("<br> ")}</p>
+                    <p><strong>Fremgangsmåde:</strong><br> ${Object.values(acf.fremgangsmaade).filter(val => val.trim() !== "").join("<br> ")}</p>
+                    <p><strong>Varighed:</strong> ${acf.varighed_i_minutter} min </p>
                     <img src="${acf.opskrift_billede?.url}" alt="Opskrift billede" />
                 </article>
             `;
@@ -149,3 +149,6 @@ function renderRecipes(data) {
         resultEl.innerHTML = "<p>Ingen opskrift fundet.</p>";
     }
 }
+
+
+
