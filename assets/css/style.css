@@ -40,7 +40,7 @@ nav {
     height: auto;
 }
 
-li{
+.nav-li{
     list-style: none;
     background-color: #316531;
     padding: 1rem;
