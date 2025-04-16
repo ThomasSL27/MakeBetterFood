@@ -297,3 +297,50 @@ padding: 15px;
     background-color: rgba(128, 190, 128, 0.2);
     border-radius: 15px;
 }
+
+/* Bruger siden*/
+.userInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.userInfo a {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    color: black;
+}
+.userInfo i {
+    padding-top: 1rem;
+}
+.userInfo img{
+    width: 250px;
+    padding: 2rem;
+    padding-top: 1rem;
+}
+.profilpic{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.preferences {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr;
+    
+}
+.preferences a {
+    display: flex;
+    color:black;
+    gap: 30px;
+    align-items: center;
+    align-self: flex-end;
+    margin-left: 200px;
+}
+
+.preferences li{
+    list-style-type: none;
+    background-color:rgba(128, 190, 128, 0.2) ;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 15px;
+}

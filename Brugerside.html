@@ -6,10 +6,13 @@
     <title>Document</title>
     <script src="./assets/java/app.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
   </head>
   <body>
-    <header>
-      <nav>
+   <header>
+    <nav>
         <a href="./index.html">
           <img
             class="icon"
@@ -31,28 +34,35 @@
       </nav>
     </header>
     <main>
-      <section class="BreadcrumbSection">
+      <article>
+        <section class="BreadcrumbSection">
         <ul class="Breadcrumbs">
           <li><a href="./index.html"> Home </a></li>
-          <li>Quick everyday meals</li>
+          <li>Profile</li>
         </ul>
       </section>
-      <article class="CollectionSite">
-        <div class="collectionsCard">
-          <img src="./assets/img/coffeeIcon.png" alt="" />
-          <p id="CollectionCardName">Quick everyday meals</p>
-        </div>
-        <div>
-          <p id="CollectionCardTekst">
-            Life's responsibilities can sometimes get overwhelming, and you just
-            need a meal that's ready in no time. Treat yourself to a quick
-            homemade meal that will become the family's new favorite!
-          </p>
-        </div>
-      </article>
-      <div class="recipe-wrapper">
-        <div class="all-recipes"></div>
+    <section class="userInfo">
+        <img src="./assets/img/brugerimg.png" alt="user profile picture" class="profilpic">
+        <h1>Welcome back user!</h1>
+        <a>Email@user.com</a>
+        <i class="fa-solid fa-pen-to-square"></i>
+    </section>
+    <section class="preferences">
+      <h2>Preferences</h2>
+      <div class="seeRecipes">
+        
+        <a href="./recipes.html">
+            <p>See recipes </p>
+        <i class="fa-solid fa-arrow-right"></i>
+        </a>
       </div>
+      <ul>
+        <li>Vegetarian</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Liked Recipes</h2>
+    </section>
     </main>
   </body>
 </html>
