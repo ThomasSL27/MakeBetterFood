@@ -253,4 +253,47 @@ article {
   .accordion-header.active + .accordion-content {
     display: block;
   }
-  
+  /* Samlings sider*/
+
+  .CollectionSite{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .CollectionSite img{
+    border: 5px solid #316531;
+        border-radius: 100%;
+        padding: 2rem;
+  }
+  #CollectionCardName{
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+  }
+  #CollectionCardTekst {
+    width: 600px;
+  }
+
+  /*Breadcrumbs*/
+  .Breadcrumbs{
+    list-style: none;
+  }
+  .Breadcrumbs li a{
+    color: black;
+    font-family: "Fredoka", sans-serif;
+    padding: 5px;
+  }
+  .Breadcrumbs li{
+    display: inline;
+    font-size: 15px;
+  }
+/* Mellemrum mellem orderne*/
+.Breadcrumbs li + li:before{
+content: "/";
+padding: 15px;
+}
+/*Hover funktionen*/
+.Breadcrumbs li a:hover{
+    background-color: rgba(128, 190, 128, 0.2);
+    border-radius: 15px;
+}
