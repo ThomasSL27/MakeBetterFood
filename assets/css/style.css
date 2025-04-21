@@ -77,11 +77,22 @@ a{
     padding-bottom: 1rem;
 }
 
-#forsideCards{
+#forsideCards {
     display: flex;
     justify-content: space-evenly;
 }
- 
+
+.FScard-easy {
+    border-radius: 8px;
+        text-align: center;
+        width: 300px;
+}
+.FScard-easy img{
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
 
 /* Card EASY*/
 article {
@@ -101,7 +112,7 @@ article {
     margin: 0;
 }
 
-.card-easy p {
+.card-easy .tags {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-left: 2px solid #316531;
@@ -138,7 +149,7 @@ article {
     margin: 0;
 }
 
-.card-medium p {
+.card-medium .tags{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-left: 2px solid #BDA570;
@@ -154,6 +165,7 @@ article {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     margin: 0;
     background-color: rgba(128, 190, 128, 0.2);
+    padding-left: 10px;
 }
 .card-medium h3 {
     margin: 10px 0;
@@ -175,7 +187,7 @@ article {
     margin: 0;
 }
 
-.card-hard p {
+.card-hard .tags {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-left: 2px solid #8D0909;
@@ -210,7 +222,12 @@ article {
     gap: 1.5rem;
     max-width: 1200px;
   }
-  
+  .tagsOgIndhild  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr ;
+    text-align: left;
+  }
   /*  */
   /*  */
   .filter-panel {
@@ -273,7 +290,17 @@ article {
   #CollectionCardTekst {
     width: 600px;
   }
+#moreCollections {
+    text-align: center;
+    padding: 1.5rem;
+    padding-bottom: 1rem;
+}
+/* opstillingen til opskrifter*/
 
+.spring-recipes, .quick-recipes, .vegan-recipes{
+    display: flex;
+}
+   
   /*Breadcrumbs*/
   .Breadcrumbs{
     list-style: none;
