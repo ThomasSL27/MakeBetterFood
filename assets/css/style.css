@@ -97,7 +97,7 @@ a{
     padding: 2rem;
 }
 #collections img{
-    width: 100px;
+    width: 160px;
 }
 #recipeh2{
     text-align: center;
@@ -310,7 +310,8 @@ article {
 #moreCollections {
     text-align: center;
     padding: 1.5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
+    justify-content: space-between;
 }
 /* opstillingen til opskrifter*/
 
@@ -319,7 +320,7 @@ article {
     margin-left: 10rem;
     padding-bottom: 3rem;
 }
-.quick-recipes{
+.quick-recipes, .birthday-recipes{
     display: flex;
     margin-left: 10rem;
     flex-wrap: wrap;
