@@ -4,7 +4,7 @@ h1, h2, h3, h4, h5, h6{
     font-family: "Solway", serif;
 }
 
-p, a{
+p{
     font-family: "Fredoka", sans-serif;
 }
 
@@ -19,7 +19,7 @@ footer{
     padding: 5rem;
     color: white;
 }
-
+/* Navigation*/
 nav {
     display: flex;
     justify-content: space-between;
@@ -53,11 +53,37 @@ a{
     text-decoration: none;
     color: white;
 }
+  /*Breadcrumbs*/
+  .Breadcrumbs {
+      list-style: none;
+  }
 
+  .Breadcrumbs li a {
+      color: black;
+      padding: 5px;
+  }
+
+  .Breadcrumbs li {
+      display: inline;
+      font-size: 15px;
+  }
+
+/* Mellemrum mellem orderne*/
+.Breadcrumbs li+li:before {
+    content: "/";
+    padding: 15px;
+}
+
+/*Hover funktionen*/
+.Breadcrumbs li a:hover {
+    background-color: rgba(128, 190, 128, 0.2);
+    border-radius: 15px;
+}
+
+/* Home page*/
 .hero{
     width: 100%;
 }
-
 .recipeCollection{
     display: flex;
     align-items: center;
@@ -70,30 +96,21 @@ a{
     border-radius: 100%;
     padding: 2rem;
 }
-
+#collections img{
+    width: 100px;
+}
 #recipeh2{
     text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 30px;
 }
-
-#forsideCards {
+.home-recipes {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding-bottom: 3rem;
+    gap: 1.5rem;
 }
-
-.FScard-easy {
-    border-radius: 8px;
-        text-align: center;
-        width: 300px;
-}
-.FScard-easy img{
-        width: 100%;
-        height: auto;
-        margin: 0;
-    }
-
-
 /* Card EASY*/
 article {
     margin: 20px;
@@ -297,33 +314,21 @@ article {
 }
 /* opstillingen til opskrifter*/
 
-.spring-recipes, .quick-recipes, .vegan-recipes{
+.spring-recipes, .vegan-recipes{
     display: flex;
+    margin-left: 10rem;
+    padding-bottom: 3rem;
+}
+.quick-recipes{
+    display: flex;
+    margin-left: 10rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-bottom: 3rem;
 }
    
-  /*Breadcrumbs*/
-  .Breadcrumbs{
-    list-style: none;
-  }
-  .Breadcrumbs li a{
-    color: black;
-    font-family: "Fredoka", sans-serif;
-    padding: 5px;
-  }
-  .Breadcrumbs li{
-    display: inline;
-    font-size: 15px;
-  }
-/* Mellemrum mellem orderne*/
-.Breadcrumbs li + li:before{
-content: "/";
-padding: 15px;
-}
-/*Hover funktionen*/
-.Breadcrumbs li a:hover{
-    background-color: rgba(128, 190, 128, 0.2);
-    border-radius: 15px;
-}
+
+
 
 /* Bruger siden*/
 .userInfo {

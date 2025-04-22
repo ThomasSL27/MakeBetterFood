@@ -5,32 +5,35 @@ const recipeSite = [
     ["Vegetarian Soft Tacos", "./assets/img/cardImgs/vegetarian-soft-tacos.png", "card-easy", "Easy","Quick","20 min"],
     ["Gluten-Free Cornbread", "./assets/img/cardImgs/gluten-free-cornbread.png", "card-medium", "Medium","Bread","50 min"],
     ["Greek Salad", "./assets/img/cardImgs/greek-salad.png", "card-easy", "Easy","Spring","20 min"],
-    ["Rainbow Birthday Cake", "./assets/img/cardImgs/rainbow-birthday-cake.png", "card-hard", "Hard","Desserts","3 hours"],
+    ["Rainbow Birthday Cake", "./assets/img/cardImgs/rainbow-birthday-cake.png", "card-hard", "Hard","Birthday","3 hours"],
     ["Baked Kale Chips", "./assets/img/cardImgs/baked-kale-chips.png", "card-easy", "Easy","Quick", "25 min"],
-    ["Apple Cinnamon Pancakes", "./assets/img/cardImgs/apple-cinnamon-pancakes.png", "card-easy", "Easy","Breakfast","30 min"],
+    ["Apple Cinnamon Pancakes", "./assets/img/cardImgs/apple-cinnamon-pancakes.png", "card-easy", "Easy","Birthday","30 min"],
     ["Stacked Enchiladas", "./assets/img/cardImgs/stacked-enchiladas.png", "card-easy", "Easy","Quick","30 min"],
     ["Pasta Primavera", "./assets/img/cardImgs/pasta-primavera.png", "card-easy", "Easy","Vegan", "60 min"],
     ["Carrot Ginger Soup", "./assets/img/cardImgs/carrot-ginger-soup.png", "card-medium", "Medium","Spring","35-40 min"],
     ["Better Sloppy Joes", "./assets/img/cardImgs/sloppy-joes.png", "card-easy", "Easy","Quick","20 min"],
     ["Epic Vegetable Pie", "./assets/img/cardImgs/vegetable-pie.png", "card-easy", "Easy","Vegan","1 hour 25 min"],
     ["Better Banana Bread", "./assets/img/cardImgs/banana-bread.png", "card-medium", "Medium","Bread","60 min"],
-    ["Cinnamon Pinwheels", "./assets/img/cardImgs/cinnamon-pinwheels.png", "card-easy", "Easy","Desserts","1 hour 15 min"],
+    ["Cinnamon Pinwheels", "./assets/img/cardImgs/cinnamon-pinwheels.png", "card-easy", "Easy","Birthday","1 hour 15 min"],
     ["Maple Pecan Ice Cream", "./assets/img/cardImgs/maple-pecan-ice-cream.png", "card-easy", "Easy","Desserts","8 hours 30 min"],
     ["Baked Avocado Fries", "./assets/img/cardImgs/baked-avocado-fries.png", "card-medium", "Medium","Apetizers", "40 min"],
     ["Homemade Tortilla Chips", "./assets/img/cardImgs/homemade-tortilla-chips.png", "card-easy", "Easy","Apetizers","25 min"],
-    ["Homemade Hot Chocolate Mix", "./assets/img/cardImgs/homemade-hot-chocolate-mix.png", "card-easy", "Easy","Drinks", "10 min"],
+    ["Homemade Hot Chocolate Mix", "./assets/img/cardImgs/homemade-hot-chocolate-mix.png", "card-easy", "Easy","Birthday", "10 min"],
     ["Spinnach Artichoke Dip", "./assets/img/cardImgs/spinach-artichoke-dip.png", "card-medium", "Medium","Apetizers","35 min"],
     ["Blueberry Mango Smoothie", "./assets/img/cardImgs/blueberry-mango-smoothie.png", "card-easy", "Easy","Drinks","5 min"],
     ["Overnight Oatmeal", "./assets/img/cardImgs/overnight-oatmeal.png", "card-easy", "Easy","Breakfast","5 min"],
     ["Country Whole Wheat Bread", "./assets/img/cardImgs/country-whole-wheat-bread.png", "card-easy", "Easy","Bread","3 hours 20 min"]
+];
 
 // Target containers
 const recipeContainers = {
   ".all-recipes": () => true,
   ".vegan-recipes": r => r.includes("Vegan"),
   ".quick-recipes": r => r.includes("Quick"),
-  ".spring-recipes": r => r.includes("Spring")
+  ".spring-recipes": r => r.includes("Spring"),
+  ".birthday-recipes": r => r.includes("Birthday"),
 };
+const homeContainer = document.querySelector(".home-recipes");
 
 // Reusable card template
 function createRecipeCard(rShow) {
@@ -52,7 +55,17 @@ function createRecipeCard(rShow) {
     </article>
   `;
 }
+if (homeContainer) {
+  const easy = recipeSite.find(r => r[3] === "Easy");
+  const medium = recipeSite.find(r => r[3] === "Medium");
+  const hard = recipeSite.find(r => r[3] === "Hard");
 
+  [easy, medium, hard].forEach(recipe => {
+    if (recipe) {
+      homeContainer.innerHTML += createRecipeCard(recipe);
+    }
+  });
+}
 // Render logic
 for (const [selector, filterFn] of Object.entries(recipeContainers)) {
   const container = document.querySelector(selector);
@@ -104,7 +117,7 @@ async function init() {
         }
     } catch (err) {
         console.log('err:', err);
-        alert ("Der gik noget galt, fuck hvor nederen?!");
+        //alert ("Der gik noget galt, fuck hvor nederen?!");
         resultEl.innerHTML = "Der gik noget galt, fuck hvor nederen?!";
     }
 }
