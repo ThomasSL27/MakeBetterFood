@@ -38,6 +38,7 @@ const homeContainer = document.querySelector(".home-recipes");
 // Reusable card template
 function createRecipeCard(rShow) {
   return `
+  
     <article>
       <div class="${rShow[2]}">
         <p class="tags">${rShow[3]}</p>
@@ -48,11 +49,22 @@ function createRecipeCard(rShow) {
             <div class="tagsOgIndhild">
               <p>${rShow[4]}</p>
               <p>${rShow[5]}</p>
+              <!-- Heart SVG -->
+            <div class="heart-icon">
+              <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 280.1 304.2">
+  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+  <defs>
+  </defs>
+  <path class="st0" d="M253.6,146.1l-47.6,47.2c-.5.5.6-.3,0,0l-65.1,65.2-68.3-68.3c-.1,0-.3-.2-.4-.3l-45.5-45.5c-21.4-21.4-21.4-56.1,0-77.5,27.9-27.9,73.2-27.9,101.2,0l14.4,14.4,11.6-11.6c27.6-27.6,72.2-27.6,99.8,0,21.1,21.1,21.1,55.3,0,76.5Z"/>
+</svg>
+            </div>
+          </div>
             </div>
           </section>
         </div>
       </div>
     </article>
+    
   `;
 }
 if (homeContainer) {
