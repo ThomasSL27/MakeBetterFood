@@ -25,20 +25,29 @@ const recipeSite = [
     ["Country Whole Wheat Bread", "./assets/img/cardImgs/country-whole-wheat-bread.png", "card-easy", "Easy","Bread","3 hours 20 min"]
 ];
 
-// Target containers
+
 const recipeContainers = {
-  ".all-recipes": () => true,
-  ".vegan-recipes": r => r.includes("Vegan"),
+  
+  ".all-recipes": () => true, 
+  
+  // Denne function har ingen argumenter og derfor altidreturner true, det betyder at alle opskrifter vises i den container der kar class .all-recipes, den bruges som en catch-all
+
+  ".vegan-recipes": r => r.includes("Vegan"), 
+  
+  //her defineres en funktion med parameter r( array med data om opskrift). r.includes("vegan") tjekker for om der fedes vegan i et array, dette returner true hvis der er vegan, dette funktion viser hun veganske opskrifter på den definerede side (i dette tilfelde .vegan-recipes) det samme foregår i de nedståene funktioner.
+
   ".quick-recipes": r => r.includes("Quick"),
   ".spring-recipes": r => r.includes("Spring"),
   ".birthday-recipes": r => r.includes("Birthday"),
 };
 const homeContainer = document.querySelector(".home-recipes");
+//henter elementet med class .home-recipes fra html
 
-// Reusable card template
+// Tamplate til opskrift cortne, dette laver opskrift card ud fra htmlen, ved brug af rShow som er array med opskrift infoer. ${rShow[2]} dette sætter de forskellige informationer ind 
 function createRecipeCard(rShow) {
-  return `
   
+  return `
+ 
     <article>
       <div class="${rShow[2]}">
         <p class="tags">${rShow[3]}</p>
@@ -49,14 +58,13 @@ function createRecipeCard(rShow) {
             <div class="tagsOgIndhild">
               <p>${rShow[4]}</p>
               <p>${rShow[5]}</p>
+              
               <!-- Heart SVG -->
             <div class="heart-icon">
               <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 280.1 304.2">
-  <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
-  <defs>
-  </defs>
-  <path class="st0" d="M253.6,146.1l-47.6,47.2c-.5.5.6-.3,0,0l-65.1,65.2-68.3-68.3c-.1,0-.3-.2-.4-.3l-45.5-45.5c-21.4-21.4-21.4-56.1,0-77.5,27.9-27.9,73.2-27.9,101.2,0l14.4,14.4,11.6-11.6c27.6-27.6,72.2-27.6,99.8,0,21.1,21.1,21.1,55.3,0,76.5Z"/>
-</svg>
+              <!-- Generator: Adobe Illustrator 29.4.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 152)  -->
+              <path class="st0" d="M253.6,146.1l-47.6,47.2c-.5.5.6-.3,0,0l-65.1,65.2-68.3-68.3c-.1,0-.3-.2-.4-.3l-45.5-45.5c-21.4-21.4-21.4-56.1,0-77.5,27.9-27.9,73.2-27.9,101.2,0l14.4,14.4,11.6-11.6c27.6-27.6,72.2-27.6,99.8,0,21.1,21.1,21.1,55.3,0,76.5Z"/>
+              </svg>
             </div>
           </div>
             </div>
@@ -67,17 +75,22 @@ function createRecipeCard(rShow) {
     
   `;
 }
+//if (homeContainer)tjekker om elementet .home-recipes finde i dom, 
+
 if (homeContainer) {
-  const easy = recipeSite.find(r => r[3] === "Easy");
+  const easy = recipeSite.find(r => r[3] === "Easy"); // dette bruges til at finde den første opskrift på recipeSite som har sværhedsgrad easy ved bruge array.find(). r er et array og r[3] er sværhedsgraden, array starter fra 0 så sværhedsgrad er på plads 4 istedet for 3 - det samme for medium og hard 
   const medium = recipeSite.find(r => r[3] === "Medium");
   const hard = recipeSite.find(r => r[3] === "Hard");
-
-  [easy, medium, hard].forEach(recipe => {
+// her laver vi et array med de 3 opskrifter og looper i gennem dem med forEach.
+  [easy, medium, hard].forEach(recipe => { 
     if (recipe) {
       homeContainer.innerHTML += createRecipeCard(recipe);
+      //her tjkker vi om recipe findes ( hvi ikke den gør vil der stå undifined). Hvis recipe findes Kaldes funktionen createRecipeCard(recipe), som returnerer en HTML-string med opskriften.Den HTML tilføjes til homeContainer.innerHTML med +=, så den lægger oveni eksisterende indhold.
+      // Alt i alt dette kode viser en opskrift fra hver sværhedgrad i boksen .home-recipes - der er nok en nemmere måde at gøre det her på men det her var nemmest at forstå
     }
   });
 }
+
 // Render logic
 for (const [selector, filterFn] of Object.entries(recipeContainers)) {
   const container = document.querySelector(selector);
@@ -197,4 +210,15 @@ function renderRecipes(data) {
 }
 
 
+// Hjerter - like knappen
+document.addEventListener('DOMContentLoaded', () => {
+  const heartIcons = document.querySelectorAll('.heart-icon');
+
+  heartIcons.forEach(heart => {
+    heart.addEventListener('click', () => {
+      
+      heart.classList.toggle('filled');
+    });
+  });
+});
 

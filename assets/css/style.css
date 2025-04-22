@@ -261,6 +261,7 @@ article {
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .heart-icon svg{
@@ -272,6 +273,25 @@ article {
     stroke: #316531;
     stroke-miterlimit: 10;
     stroke-width: 30px;
+    transition: fill 0.3 ease;
+}
+/* Fyld hjertet ud */
+/* Animation to gradually fill the heart */
+@keyframes fillHeart {
+    0% {
+        fill: none;
+    }
+
+    100% {
+        fill: #316531;
+        /* Change fill color to green */
+    }
+}
+
+/* When heart is clicked (filled), apply the gradual filling animation */
+.heart-icon.filled path {
+    animation: fillHeart 1s forwards;
+    /* Apply the animation with a duration of 1 second */
 }
 
   /*  */
@@ -379,12 +399,14 @@ article {
     width: 250px;
     padding: 2rem;
     padding-top: 1rem;
+    padding-left: 60px;
 }
 .profilpic{
     grid-row-start: 1;
     grid-row-end: 3;
 }
 .preferences {
+    padding-left: 60px;
     display: grid;
     grid-template-columns: 1fr 1fr ;
         grid-template-rows: 1fr 1fr;
@@ -405,4 +427,25 @@ article {
     width: fit-content;
     padding: 10px;
     border-radius: 15px;
+}
+.liked-recipes-container{
+    padding-left: 60px;
+}
+.recipe-link {
+    color: black;
+}
+
+.result{
+    line-height: 2rem;
+    padding-left: 60px;
+    
+}
+.result p {
+    width: 600px;
+}
+.result strong {
+    font-size: 20px;
+}
+.result article img {
+    align-items: center;
 }
