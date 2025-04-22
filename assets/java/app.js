@@ -23,8 +23,6 @@ const recipeSite = [
     ["Blueberry Mango Smoothie", "./assets/img/cardImgs/blueberry-mango-smoothie.png", "card-easy", "Easy","Drinks","5 min"],
     ["Overnight Oatmeal", "./assets/img/cardImgs/overnight-oatmeal.png", "card-easy", "Easy","Breakfast","5 min"],
     ["Country Whole Wheat Bread", "./assets/img/cardImgs/country-whole-wheat-bread.png", "card-easy", "Easy","Bread","3 hours 20 min"]
-];
-
 
 // Target containers
 const recipeContainers = {
