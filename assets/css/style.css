@@ -100,10 +100,10 @@ a{
     border-radius: 100%;
     padding: 2rem;
 }
-#collections img{
+.collections img{
     width: 160px;
 }
-#recipeh2{
+.recipeh2{
     text-align: center;
     padding-top: 2rem;
     padding-bottom: 2rem;

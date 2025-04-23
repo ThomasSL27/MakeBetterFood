@@ -7,86 +7,114 @@
     <script src="./assets/java/app.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
-    <header>
-      <nav>
-        <a href="./index.html">
-          <img
-            class="icon"
-            src="./assets/img/pearLogo.webp"
-            alt="hjemmeside logo fra colourbox"
-          />
-        </a>
-        <ul class="nav-ul">
-          <li class="nav-li">
-            <a href="./recipes.html">Recipes</a>
-          </li>
-        </ul>
-        <div class="user-login">
-          <a href="./Brugerside.html">
-            <img class="user" src="./assets/img/usericon.webp" alt="" />
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Birthday Recipes</title>
+      <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+      <header>
+        <nav>
+          <a href="./index.html">
+            <img
+              class="icon"
+              src="./assets/img/pearLogo.webp"
+              alt="Homepage logo from Colourbox"
+            />
           </a>
-          <p>USER</p>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section class="BreadcrumbSection">
-        <ul class="Breadcrumbs">
-          <li><a href="./index.html"> Home </a></li>
-          <li>Birthday recipes</li>
-        </ul>
-      </section>
-      <article class="CollectionSite">
-        <div class="collectionsCard">
-          <img src="./assets/img/kagen.webp" alt="" />
-          <p id="CollectionCardName">Birthday recipes</p>
-        </div>
-        <div>
-          <p id="CollectionCardTekst">
-            Planning the perfect birthday can be a lot—but the food doesn’t have to be! Whip up easy, crowd-pleasing recipes that bring the party to life without the stress. Celebrate with sweet and savory favorites that everyone will love!
-          </p>
-        </div>
-      </article>
-
-      <section class="collectionSiteRecipes">
-        <div class="recipe-wrappers">
-          <div class="birthday-recipes"></div>
-        </div>
-      </section>
-      <section>
-         <h2 id="moreCollections">See more collections</h2>
-        <article class="recipeCollection">
-          <a href=""></a>
-          <div class="collections">
-            <a href="./VeggieBomb_Samlingsside.html">
-              <img src="./assets/img/salatIcon.webp" alt="" />
+          <ul class="nav-ul">
+            <li class="nav-li">
+              <a href="./recipes.html">Recipes</a>
+            </li>
+          </ul>
+          <div class="user-login">
+            <a href="./Brugerside.html">
+              <img
+                class="user"
+                src="./assets/img/usericon.webp"
+                alt="User icon"
+              />
             </a>
-            <p>Veggie bomb</p>
+            <p>USER</p>
           </div>
-        <div id="collections" class="collections">
-          <a href="./QuickMeals-samlingsside.html"
-            ><img src="./assets/img/mm-hverdagsmad.webp" alt=""
-          /></a>
-          <p>Quick everyday meals</p>
-        </div>
-        <div class="collections">
-          <a href="./SpringMeals-samlingsside.html">
-            <img src="./assets/img/chickenIcon.webp" alt="" />
-          </a>
-          <p>Spring meals</p>
-        </div>
-      </article>
+        </nav>
+      </header>
 
-      <div class="isVeg"></div>
-    </main>
-    <footer>
-      <p>
-        MakeBetterFood.com recipes are available under a Creative Commons
-        License.
-      </p>
-      <p>Cooked with love by Kevin Conroy.</p>
-    </footer>
-  </body>
+      <main>
+        <section class="BreadcrumbSection">
+          <ul class="Breadcrumbs">
+            <li><a href="./index.html">Home</a></li>
+            <li>Birthday recipes</li>
+          </ul>
+        </section>
+
+        <article class="CollectionSite">
+          <div class="collectionsCard">
+            <img src="./assets/img/kagen.webp" alt="Birthday cake" />
+            <p id="CollectionCardName">Birthday recipes</p>
+          </div>
+          <div>
+            <p id="CollectionCardTekst">
+              Planning the perfect birthday can be a lot—but the food doesn’t
+              have to be! Whip up easy, crowd-pleasing recipes that bring the
+              party to life without the stress. Celebrate with sweet and savory
+              favorites that everyone will love!
+            </p>
+          </div>
+        </article>
+
+        <section class="collectionSiteRecipes">
+          <div class="recipe-wrappers">
+            <div class="birthday-recipes"></div>
+          </div>
+        </section>
+
+        <section>
+          <h2 id="moreCollections">See more collections</h2>
+          <article class="recipeCollection">
+            <div class="collections">
+              <a href="./VeggieBomb_Samlingsside.html">
+                <img
+                  src="./assets/img/salatIcon.webp"
+                  alt="Vegetarian salad icon"
+                />
+                <p>Veggie bomb</p>
+              </a>
+            </div>
+            <div class="collections">
+              <a href="./QuickMeals-samlingsside.html">
+                <img
+                  src="./assets/img/mm-hverdagsmad.webp"
+                  alt="Quick meals icon"
+                />
+                <p>Quick everyday meals</p>
+              </a>
+            </div>
+            <div class="collections">
+              <a href="./SpringMeals-samlingsside.html">
+                <img
+                  src="./assets/img/chickenIcon.webp"
+                  alt="Spring meals icon"
+                />
+                <p>Spring meals</p>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <div class="isVeg"></div>
+      </main>
+
+      <footer>
+        <p>
+          MakeBetterFood.com recipes are available under a Creative Commons
+          License.
+        </p>
+        <p>Cooked with love by Kevin Conroy.</p>
+      </footer>
+    </body>
+  </html>
 </html>
-.birthday-recipes

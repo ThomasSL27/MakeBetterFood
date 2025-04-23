@@ -3,21 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>User Profile</title>
     <script src="./assets/java/app.js" defer></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-   <header>
-    <nav>
+    <header>
+      <nav>
         <a href="./index.html">
           <img
             class="icon"
             src="./assets/img/pearLogo.webp"
-            alt="hjemmeside logo fra colourbox"
+            alt="Homepage logo from Colourbox"
           />
         </a>
         <ul class="nav-ul">
@@ -27,45 +31,63 @@
         </ul>
         <div class="user-login">
           <a href="./Brugerside.html">
-            <img class="user" src="./assets/img/usericon.webp" alt="" />
+            <img
+              class="user"
+              src="./assets/img/usericon.webp"
+              alt="User icon"
+            />
           </a>
           <p>USER</p>
         </div>
       </nav>
     </header>
+
     <main>
       <article>
         <section class="BreadcrumbSection">
-        <ul class="Breadcrumbs">
-          <li><a href="./index.html"> Home </a></li>
-          <li>Profile</li>
-        </ul>
-      </section>
-    <section class="userInfo">
-        <img src="./assets/img/brugerimg.webp" alt="user profile picture" class="profilpic">
-        <h1>Welcome back user!</h1>
-        <a>Email@user.com</a>
-        <i class="fa-solid fa-pen-to-square"></i>
-    </section>
-    <section class="preferences">
-      <h2>Preferences</h2>
-      <div class="seeRecipes">
-        
-        <a href="./recipes.html">
-            <p>See recipes </p>
-        <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-      <ul>
-        <li>Vegetarian</li>
-      </ul>
-    </section>
-    <section>
-      <h2 class="liked-recipes-container">Liked Recipes</h2>
-       
-        </div>
-    </section>
+          <ul class="Breadcrumbs">
+            <li><a href="./index.html">Home</a></li>
+            <li>Profile</li>
+          </ul>
+        </section>
+
+        <section class="userInfo">
+          <img
+            src="./assets/img/brugerimg.webp"
+            alt="User profile picture"
+            class="profilpic"
+          />
+          <h1>Welcome back, user!</h1>
+          <p><a href="mailto:Email@user.com">Email@user.com</a></p>
+          <i class="fa-solid fa-pen-to-square" aria-label="Edit profile"></i>
+        </section>
+
+        <section class="preferences">
+          <h2>Preferences</h2>
+          <div class="seeRecipes">
+            <a href="./recipes.html">
+              <p>See recipes</p>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <ul>
+            <li>Vegetarian</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="liked-recipes-container">Liked Recipes</h2>
+          <div class="liked-recipes"></div>
+        </section>
+      </article>
     </main>
-    
+
+    <footer>
+      <p>
+        MakeBetterFood.com recipes are available under a Creative Commons
+        License.
+      </p>
+      <p>Cooked with love by Kevin Conroy.</p>
+    </footer>
   </body>
 </html>
