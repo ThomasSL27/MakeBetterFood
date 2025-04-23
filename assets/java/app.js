@@ -49,10 +49,13 @@ function createRecipeCard(rShow) {
   return `
  
     <article>
+    <a href="sesamNoodles.html" class="recipe-link">
       <div class="${rShow[2]}">
-        <p class="tags">${rShow[3]}</p>
+        <p class="tags">${rShow[3]}</p> 
+        
         <div class="imgAndText">
           <img src="${rShow[1]}" alt="${rShow[0]}" />
+           </a>
           <section>
             <h3>${rShow[0]}</h3>
             <div class="tagsOgIndhild">
