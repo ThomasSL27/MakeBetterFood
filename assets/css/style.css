@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6{
     font-family: "Solway", serif;
 }
 
-p{
+p, a, input{
     font-family: "Fredoka", sans-serif;
 }
 
