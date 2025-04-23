@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Solway:wght@300;400;500;700;800&display=swap');
 
+*{
+    line-height: 1.5;
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: "Solway", serif;
 }
@@ -287,11 +291,8 @@ article {
         /* Change fill color to green */
     }
 }
-
-/* When heart is clicked (filled), apply the gradual filling animation */
 .heart-icon.filled path {
-    animation: fillHeart 1s forwards;
-    /* Apply the animation with a duration of 1 second */
+    animation: fillHeart 1s forwards; 
 }
 
   /*  */
@@ -301,7 +302,6 @@ article {
     background-color: #83BC7D;
     padding: 1rem;
     border-radius: 0 0 1rem 0;
-    /* position: absolute; */
   }
   
   .filter-panel h2 {
@@ -310,7 +310,7 @@ article {
     margin-bottom: 1rem;
   }
   
-  .accordion-header {
+  .filter-header {
     background: none;
     border: 1px solid #333;
     width: 100%;
@@ -325,7 +325,7 @@ article {
     background-color: transparent;
   }
   
-  .accordion-header + .accordion-content {
+  .filter-header + .filter-content {
     display: none;
     padding: 0.5rem;
     background-color: #a3cf9b;
@@ -333,7 +333,7 @@ article {
     border-top: none;
   }
   
-  .accordion-header.active + .accordion-content {
+  .filter-header.active + .filter-content {
     display: block;
   }
   /* Samlings sider*/
@@ -435,17 +435,35 @@ article {
     color: black;
 }
 
-.result{
-    line-height: 2rem;
-    padding-left: 60px;
-    
+.recipe {
+    max-width: 80vw;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
 }
-.result p {
-    width: 600px;
+
+.recipe img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
-.result strong {
-    font-size: 20px;
+
+.recipe .columns {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
 }
-.result article img {
-    align-items: center;
+
+.recipe .columns > div {
+    flex: 1;
+    min-width: 300px;
+}
+
+.icon{
+    height: 79px;
+    width: 65px;
 }

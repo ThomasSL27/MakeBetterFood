@@ -105,22 +105,6 @@ for (const [selector, filterFn] of Object.entries(recipeContainers)) {
     });
   }
 }
-
-
-document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', () => {
-      header.classList.toggle('active');
-  
-      const content = header.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-        header.querySelector("span").textContent = "+";
-      } else {
-        content.style.display = "block";
-        header.querySelector("span").textContent = "-";
-      }
-    });
-  });
   
 
 const domain = "https://api.finnw.dk/";
@@ -134,12 +118,18 @@ const desiredRecipeSlug = "sesame-noodles-with-chicken";
 
 init();
 
+// kalder init og funktionen er asynkron hvilket betyder at den kan bruge await til at vente på noget fx et API kald
 async function init() {
+  // dette er try-catch metoden, Alt i try bliver forsøgt udført, hvis noget slår fejl, hopper den ned i catch
     try {
+      // Venter på at få token
         const token = await getToken();
+        // Henter opskrift baseret på dens slug
         const recipe = await getRecipeBySlug(token, desiredRecipeSlug);
+        // hvis den kanne finde "recipe" ud fra token, desiredRecipeSlug, så hvis den på siden
         if (recipe) {
             renderRecipes([recipe]);
+            // hvis ikke, så kommer med fejlbeskeden
         } else {
             resultEl.innerHTML = "Opskriften kunne ikke findes.";
         }
@@ -186,26 +176,40 @@ async function getRecipeBySlug(token, slug) {
     return recipes.length > 0 ? recipes[0] : null;
 }
 
+// funktionen hedder renderRecipes
 function renderRecipes(data) {
     resultEl.innerHTML = "";
 
     console.log("Fetched recipes:", data);
-
+// Sørger for at (data) er en liste og ikke vises som tom. Hvis den ikke kan vises kommer der en fejl besked senere
     if (Array.isArray(data) && data.length > 0) {
+      // loop gennem hver recipe i data
         data.forEach(recipe => {
+          // henter opskriftens "acf" felt fra WordPress
             const acf = recipe.acf || {};
             console.log("ACF:", acf);
-
+// Tilføjer HTML article til resultEl
+// Object.values henter alle værdierne ud som en liste. med .join sætter det dem sammen til en tekststreng hvor hver ingrediens / fremgangsmåde bliver adskildt af et <br> tag
+// Her bruges også .filter(val => val.trim()!=="") Dette gør at den fjerne de tomme fælter. Fx i mit wordpress har jeg opsat til 30 steps, men en opskrift har måske kun  16 steps. Så i stedet for der er 14 ekstra tomme fælter, så trimmer den dem væk.
             resultEl.innerHTML += `
-                <article>
-                    <h2>${recipe.title.rendered}</h2>
-                    ${recipe.content.rendered}
-                    <p><strong>Ingredienser:</strong><br> ${Object.values(acf.ingredienser).filter(val => val.trim() !== "").join("<br> ")}</p>
-                    <p><strong>Fremgangsmåde:</strong><br> ${Object.values(acf.fremgangsmaade).filter(val => val.trim() !== "").join("<br> ")}</p>
-                    <p><strong>Varighed:</strong> ${acf.varighed_i_minutter} min </p>
-                    <img src="${acf.opskrift_billede?.url}" alt="Opskrift billede" />
-                </article>
-            `;
+            <article class="recipe">
+                <h2>${recipe.title.rendered}</h2>
+                <img src="${acf.opskrift_billede?.url}" alt="Opskrift billede" />
+        
+                <div class="columns">
+                    <div>
+                        <h3>Ingredienser</h3>
+                        <p>${Object.values(acf.ingredienser).filter(val => val.trim() !== "").join("<br>")}</p>
+                    </div>
+                    <div>
+                        <h3>Fremgangsmåde</h3>
+                        <p>${Object.values(acf.fremgangsmaade).filter(val => val.trim() !== "").join("<br>")}</p>
+                    </div>
+                </div>
+        
+                <p><strong>Varighed:</strong> ${acf.varighed_i_minutter} min</p>
+            </article>
+        `;
         });
     } else {
         resultEl.innerHTML = "<p>Ingen opskrift fundet.</p>";
@@ -225,3 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Når man trykker på det med class filter.header, så aktiveres class "active" der gør at den folder ud
+document.querySelectorAll('.filter-header').forEach(header => {
+  header.addEventListener('click', () => {
+    header.classList.toggle('active');
+  });
+});
